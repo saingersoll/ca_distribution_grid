@@ -1,0 +1,3 @@
+This app was developed as a resource for The 2035 Initiative's "Designing California’s Clean and Climate Resilient Electricity Grid for Vulnerable Communities" Project. I hope planners, utility providers, and policy makers alike will on day be able to utilize this app to increase public access to clean energy developments.
+
+Sofia Ingersoll {[GitHub](https://github.com/saingersoll) | [Website](https://saingersoll.github.io) | [LinkedIn](https://www.linkedin.com/in/sofia-ingersoll-078b931b7/)}

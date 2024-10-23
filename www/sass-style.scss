@@ -1,0 +1,206 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+// Color Variables (from your map)
+$deep-blue: #332288;         // ~2 kV distributed
+$light-blue: #88CCEE;        // ~4 kV distributed
+$teal: #44AA99;              // 7 kV distributed
+$dark-green: #117733;        // 12 kV distributed
+$orange-yellow: #DDCC77;     // ~13 kV distributed
+$deep-red: #CC6677;          // 16 kV distributed
+$magenta: #AA4499;           // 25 kV distributed
+$plum-purple: #882255;       // 33 kV distributed
+$black: #000000;             // 200 kV distributed, error
+
+// Complementary Colors
+$soft-gray: #eaeaea;         // Neutral background for contrast with vibrant map colors
+$dark-gray: #4a4a4a;         // Text and border color
+$off-white: #fdfdfd;         // Clean white background for sections
+$muted-blue: #556b8e;        // Accent color to complement map colors
+$soft-orange: #e6b566;       // Button hover and highlights
+$light-green: #a4d0a4;       // Subtle accent for interactivity
+$warm-gray: #e5e5e5;         // Used for dividers and non-distracting elements
+
+// Typography
+$font-primary: 'Inter', sans-serif;             // Modern, minimalist sans-serif for body text
+$font-header: 'Playfair Display', serif;        // Elegant serif for headings
+
+// Body Styling
+body {
+  background-color: $off-white;
+  color: $dark-gray;
+  font-family: $font-primary;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-gray;
+  font-family: $font-header;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $deep-blue;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: $teal;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: $magenta;
+}
+
+p {
+  font-family: $font-primary;
+  color: $dark-gray;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+// Links
+a {
+  color: $teal;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    color: $soft-orange;
+  }
+}
+
+// Buttons
+button, .btn {
+  background-color: $deep-blue;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: $font-primary;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: $soft-orange;
+  }
+
+  &.secondary {
+    background-color: $magenta;
+    &:hover {
+      background-color: $light-green;
+    }
+  }
+}
+
+// Borders and Dividers
+.border, hr {
+  border-color: $warm-gray;
+}
+
+// Containers and Layout
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header, .footer {
+  background-color: $muted-blue;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: $font-primary;
+}
+
+.header h1, .footer h1 {
+  color: $light-blue;
+}
+
+.header a, .footer a {
+  color: $teal;
+  text-decoration: underline;
+  &:hover {
+    color: $soft-orange;
+  }
+}
+
+// Interactive Elements
+.scale-bar {
+  background-color: $teal;
+  color: white;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.map-legend {
+  background-color: $off-white;
+  border: 1px solid $warm-gray;
+  padding: 10px;
+  color: $dark-gray;
+  font-family: $font-primary;
+
+  .legend-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $dark-green;
+  }
+
+  .legend-item {
+    margin-bottom: 5px;
+    color: $dark-gray;
+    font-size: 1rem;
+    span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+    &.kv2 { background-color: $deep-blue; }
+    &.kv4 { background-color: $light-blue; }
+    &.kv7 { background-color: $teal; }
+    &.kv12 { background-color: $dark-green; }
+    &.kv13 { background-color: $orange-yellow; }
+    &.kv16 { background-color: $deep-red; }
+    &.kv25 { background-color: $magenta; }
+    &.kv33 { background-color: $plum-purple; }
+    &.error { background-color: $black; }
+  }
+}
+
+// Buttons with Borders (Optional Style)
+.btn-bordered {
+  background-color: transparent;
+  border: 2px solid $deep-blue;
+  color: $deep-blue;
+  &:hover {
+    background-color: $deep-blue;
+    color: white;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

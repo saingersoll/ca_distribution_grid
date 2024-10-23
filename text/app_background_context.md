@@ -1,0 +1,3 @@
+This section will touch on ways I hope this tool will be leveraged to develop Distributed Energy Resources ("DER") in California and increase statewide resliency against extreme climate events and hazards. 
+
+I am also hoping to expand the capabilities of this app to model the grid's response to extreme events (wildfires, earthquakes, etc.) to understand where the grid is weakest and aid in strategizing solutions to affordably and ethically strengthen access to clean energy.

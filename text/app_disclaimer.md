@@ -1,0 +1,1 @@
+All information detailed this dashboard is data made publicly available by California's major utility providers in September of 2024.
