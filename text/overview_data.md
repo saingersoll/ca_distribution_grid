@@ -2,7 +2,7 @@
 
 Info to come about DDOR LBNA data (if used)
 
-Official citations to come
+Official citations to come & metadata
 
 #### **SCE** 
 https://drpep-sce2.opendata.arcgis.com/datasets/1b2ae9cdb84746f7addc2c5be769a790_0/explore?location=35.516089%2C-117.310700%2C6.97

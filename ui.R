@@ -1,10 +1,12 @@
-#........................dashboardHeader.........................
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#---          dashboardHeader        ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 header <- dashboardHeader(
   
   title = div(
     tags$a(
       # want to redirect to home page
-   #   href = "ca_distribution_grid.github.io/",
+   #   href = "ca_distribution_grid.github.io/home/",
       tags$img(
         src = "figs/power-generation.png",
         # link to logo
@@ -22,7 +24,9 @@ header <- dashboardHeader(
   
 ) # END dashboardHeader
 
-#........................dashboardSidebar........................
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----           dashboardSidebar        ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sidebar <- dashboardSidebar(width = 280,
                             
                             tags$style(".left-side, .main-sidebar {padding-top: 125px}"),
@@ -44,7 +48,10 @@ sidebar <- dashboardSidebar(width = 280,
                             
 ) # END dashboardSidebar
 
-#..........................dashboardBody.........................
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----         dashboardBody             ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 body <- dashboardBody(
   
   # add CSS styling
@@ -117,9 +124,10 @@ body <- dashboardBody(
             
     ), # END welcome tabItem
     
-
-#..............................................................................    
     
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    #----   tabItem distribution grid       ----
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # distributiongrid tabItem ----
     tabItem(tabName = "distributiongrid",
             
@@ -189,9 +197,11 @@ body <- dashboardBody(
             ) # END distributiongrid fluidRow 2
             
     ), # END distributiongrid locations tabItem
-    
-#...............................................................................    
-    
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----       tabItem energy trends       ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # energytrends tabItem ----
     tabItem(tabName = "energytrends",
             
@@ -239,9 +249,61 @@ body <- dashboardBody(
             )  # END energytrends fluidRow 1
             
     ), # END energytrends tabItem
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----          tabItem DER              ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# der tabItem ----
+tabItem(tabName = "der",
+        
+        
+        # home fluidRow 1----
+        fluidRow(
+          
+          # home background info box ----
+          box(width = 12,
+              
+              # add title to home page
+              title = tags$h1("Distributed Energy Resource Opportunities"),
+              
+              # add markdown file that includes project background info
+              includeMarkdown("text/overview_der.md"),
+              
+              # insert image of ideal der options
+              tags$img(src = "figs/arno-senoner-6lOxktnqo04-unsplash.jpg", 
+                       alt = "Image of a solar field and wind turbine in a field of green, next to an energy storage facility with 3 buildings. The largest building is on the left with a square-like shape and glass windows, the middle is a tubular building with candy-cane stripes, and the right is the smallest and most retangular with glass windows.",
+                       style = "max-width: 100%;"),
+              tags$h6(tags$em(tags$h6(href = "https://unsplash.com/photos/a-wind-farm-with-a-wind-turbine-in-the-background-6lOxktnqo04", "Senoner, Arno, Usplash.")),
+                      style = "text-align: left;"), # END image of der options
+              
+              # add markdown file that includes background context
+              includeMarkdown("text/cool_energy_alternatives.md")
+              
+          ) # END home background info box
+          
+        ), # END home fluidRow 1
+        
+        # home fluidRow 2 ----
+        fluidRow(
+          
+          # disclaimer box ----
+          box(width = 12,
+              
+              # add disclaimer icon
+              title = tagList(icon("triangle-exclamation")),
+              # add markdown file that includes disclaimer
+              includeMarkdown("text/app_disclaimer.md")
+              
+          ) # END disclaimer box
+          
+        ), # END der fluidRow 2
+        
+), # END der tabItem
     
-   
-#................................................................................
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----          tabItem.data             ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     # data tabItem ----
     tabItem(tabName = "data",
@@ -259,5 +321,9 @@ body <- dashboardBody(
   
 ) # END dashboardBody
 
-#..................combine all in dashboardPage and set dashboard title in open tobs..................
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#----  combine into dashboardPage       ----
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# set dashboard title in open tobs
 dashboardPage(title = "CA Energy Distribution Grid Tool", header, sidebar, body)
